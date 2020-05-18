@@ -1,15 +1,14 @@
 let input;
 let total = 0;
 
-while (true) {
+while (input !== null) {
   input = prompt('Введите число:');
 
-  if (input === null) {
-    console.log('Отменено пользовaтелем');
+  input = Number(input);
+
+  if (input === 0) {
     break;
   }
-
-  input = Number(input);
 
   const notNumber = Number.isNaN(input);
 

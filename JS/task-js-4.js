@@ -1,28 +1,18 @@
-const credits = 23580;
+let credits = 23580;
 const pricePerDroid = 3000;
-let quantityDroids = prompt('Введите количество дроидов');
+const quantityDroids = prompt('Введите количество дроидов');
 
 if (quantityDroids === null) {
-  console.log('Отменено пользователем');
+  console.log('Отменено пользователем!');
 } else {
-  quantityDroids = Number(quantityDroids);
+  let totalPrice = pricePerDroid * quantityDroids;
 
-  const notAnumber = Number.isNaN(quantityDroids);
-
-  if (notAnumber) {
-    quantityDroids = 'Было введено не число. Повторите ваш заказ!';
-    alert(quantityDroids);
+  if (totalPrice > credits) {
+    console.log('Недостаточно средств на счету!');
   } else {
-    let totalPrice = pricePerDroid * quantityDroids;
-
-    if (totalPrice > credits) {
-      console.log('Недостаточно средств на счету!');
-    } else {
-      let remCredits = credits - totalPrice;
-
-      console.log(
-        `Вы купили '${quantityDroids}' дроидов, на счету осталось '${remCredits}' кредитов.`,
-      );
-    }
+    credits = credits - totalPrice;
+    console.log(
+      `Вы купили '${quantityDroids}' дроидов, на счету осталось '${credits}' кредитов.`,
+    );
   }
 }

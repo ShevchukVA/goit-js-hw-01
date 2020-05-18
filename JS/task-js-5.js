@@ -1,48 +1,31 @@
 let price;
-const country = prompt('Введите вашу страну:');
-let toLowerCaseNameCountry;
+let country = prompt('Введите вашу страну:');
 
-if (country === null) {
-  console.log('Отменено пользователем');
-} else {
-  toLowerCaseNameCountry = country.toLowerCase();
+country = country.toLowerCase();
 
-  switch (toLowerCaseNameCountry) {
-    case 'китай': {
-      toLowerCaseNameCountry = 'Китай';
-      price = 100;
-      break;
-    }
+switch (country) {
+  case 'китай':
+    price = 100;
+    break;
 
-    case 'чили': {
-      toLowerCaseNameCountry = 'Чили';
-      price = 250;
-      break;
-    }
+  case 'чили':
+    price = 250;
+    break;
 
-    case 'австралия': {
-      toLowerCaseNameCountry = 'Австралия';
-      price = 170;
-      break;
-    }
-    case 'индия': {
-      toLowerCaseNameCountry = 'Индия';
-      price = 80;
-      break;
-    }
-    case 'ямайка': {
-      toLowerCaseNameCountry = 'Ямайка';
-      price = 120;
-      break;
-    }
-    default:
-      toLowerCaseNameCountry = false;
-  }
-  if (toLowerCaseNameCountry === false) {
+  case 'австралия':
+    price = 170;
+    break;
+
+  case 'индия':
+    price = 80;
+    break;
+
+  case 'ямайка':
+    price = 120;
+    break;
+
+  default:
     alert('В вашей стране доставка не доступна');
-  } else {
-    console.log(
-      `Доставка в '${toLowerCaseNameCountry}' будет стоить '${price}' кредитов`,
-    );
-  }
 }
+
+console.log(`Доставка в '${country}' будет стоить '${price}' кредитов.`);
