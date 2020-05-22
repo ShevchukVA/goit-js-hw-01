@@ -1,15 +1,6 @@
 const total = 100;
+const ordered = 50;
 
-const ordered = prompt('Введите количество товара');
-
-if (ordered === null) {
-  console.log('Отмена заказа товара');
-} else {
-  console.log('Ваш заказ:', ordered);
-
-  if (ordered > total) {
-    console.log('На складе недостаточно товаров!');
-  } else {
-    console.log('Заказ оформлен, с вами свяжется менеджер');
-  }
-}
+ordered > total
+  ? console.log('На складе недостаточно товаров!')
+  : console.log('Заказ оформлен, с вами свяжется менеджер.');

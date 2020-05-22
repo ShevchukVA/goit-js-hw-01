@@ -4,15 +4,12 @@ let total = 0;
 while (input !== null) {
   input = prompt('Введите число:');
 
-  input = Number(input);
-
-  if (input === 0) {
+  if (input === null) {
     break;
   }
+  input = Number(input);
 
-  const notNumber = Number.isNaN(input);
-
-  if (notNumber) {
+  if (Number.isNaN(input)) {
     alert('Было введено не число, попробуйте еще раз');
     continue;
   }
